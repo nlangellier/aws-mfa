@@ -1,4 +1,3 @@
-import os
 from configparser import ConfigParser
 from getpass import getpass
 from pathlib import Path
@@ -47,12 +46,6 @@ def main():
 
     with open(fpath_aws_credentials, 'w') as aws_credentials:
         config.write(aws_credentials)
-
-    set_env = input(f'Set AWS_PROFILE env variable to {profile} (y/[n])? ')
-    if set_env.upper() == 'Y':
-        os.environ['AWS_PROFILE'] = profile
-    elif set_env not in ['', 'n', 'N']:
-        raise ValueError('Invalid response. Skipping env variable setting.')
 
 
 if __name__ == '__main__':
