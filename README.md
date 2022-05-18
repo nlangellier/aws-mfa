@@ -2,6 +2,7 @@
 Tool to manage MFA credentials with multiple AWS profiles
 
 ## Installation
+In the following script, change `WORKING_DIRECTORY` to be the parent directory of the `aws-mfa` repository.
 ```
 WORKING_DIRECTORY=$HOME
 AWS_MFA_REPOSITORY=${WORKING_DIRECTORY}/aws-mfa
