@@ -2,23 +2,28 @@
 Tool to manage MFA credentials with multiple AWS profiles
 
 ## Installation
-In the following script, change `WORKING_DIRECTORY` to be the parent directory of the `aws-mfa` repository.
+###Step 1 (Optional)
+Create and activate a virtual environment to install `aws-mfa` into. For example with `conda` this may look like
 ```
-WORKING_DIRECTORY=$HOME
-AWS_MFA_REPOSITORY=${WORKING_DIRECTORY}/aws-mfa
-
-cd ${WORKING_DIRECTORY}
-git clone https://github.com/nlangellier/aws-mfa.git
-
 conda create --name aws-mfa python=3.10
 conda activate aws-mfa
+```
+### Step 2
+Install `aws-mfa`
+```
 pip install git+https://github.com/nlangellier/aws-mfa.git@main
-
-echo "alias aws-mfa=\"conda activate aws-mfa && python ${AWS_MFA_REPOSITORY}/aws_mfa/main.py && conda deactivate\"" >> $HOME/.bashrc
+```
+### Step 3 (Optional)
+If a virtual environment was created in step 1, an alias can be added to your `.bashrc` or `.zshrc` file to execute `aws-mfa` from anywhere in any environment. Using the example in step 1, append the following to your `.bashrc` or `.zshrc` file:
+```
+alias aws-mfa="conda activate aws-mfa && aws-mfa && conda deactivate || conda deactivate"
+```
+Then source your `.bashrc` or `.zshrc` file
+```
 source $HOME/.bashrc
 ```
 
-## Usage
+## Command Line Usage
 ```
 aws-mfa
 ```
