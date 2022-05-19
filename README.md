@@ -2,7 +2,7 @@
 Tool to manage MFA credentials with multiple AWS profiles
 
 ## Installation
-###Step 1 (Optional)
+### Step 1 (Optional)
 Create and activate a virtual environment to install `aws-mfa` into. For example with `conda` this may look like
 ```
 conda create --name aws-mfa python=3.10
